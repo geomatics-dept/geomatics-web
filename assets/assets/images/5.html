@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Geomatics - مكتبة الكتب</title>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Cairo & Tajawal -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&amp;family=Tajawal:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Lucide Icons CDN -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<style data-purpose="typography">
+    body {
+      font-family: 'Cairo', 'Tajawal', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+  </style>
+<style data-purpose="glassmorphism-effects">
+    /* خلفية زجاجية مضيئة ذات ملمس بلوري ناعم */
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.45);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.65);
+      box-shadow: 0 10px 30px 0 rgba(31, 38, 135, 0.08);
+    }
+
+    .glass-panel-elevated {
+      background: rgba(255, 255, 255, 0.55);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1.5px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 12px 35px rgba(23, 56, 120, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    }
+
+    .glass-badge {
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    /* تأثيرات التوهج الملون للأيقونات الرومانية */
+    .glow-cyan {
+      box-shadow: 0 8px 24px rgba(6, 182, 212, 0.45);
+    }
+    .glow-purple {
+      box-shadow: 0 8px 24px rgba(147, 51, 234, 0.45);
+    }
+    .glow-emerald {
+      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.45);
+    }
+    .glow-amber {
+      box-shadow: 0 8px 24px rgba(245, 158, 11, 0.45);
+    }
+    .glow-btn {
+      box-shadow: 0 8px 20px rgba(109, 40, 217, 0.35);
+    }
+  </style>
+</head>
+<body class="min-h-screen relative overflow-x-hidden flex justify-center bg-slate-900">
+<!-- BEGIN: MobileDeviceContainer -->
+<div class="relative w-full max-w-md min-h-screen flex flex-col justify-between overflow-hidden shadow-2xl" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDolrXPmVc6Yv4RLhNfw-AELSvYo_ifBIFfQv5TSTkmXl43xoXRbXgKbcqEa2KQzPc45F0PIqb3IhrcUV36jM3i3vlgqqrtofx7OZDYjq-zpI9GHayAwvo1cqiOT3x3sXoBc767s9JerzAmciGxnC1cuLIGYua3wYDInC-_9jNczhH6I3eMaIGQN4JUjukDtzvlGnuvoef-a8cXDgPgB8cVQedc0scp7jzGSzC5ibAafJ5kjPpEU9JnG8QCkYTftTsSU4g'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+<!-- طبقة تدرج زجاجي شفاف ناعم للتكامل مع النص والألوان -->
+<div class="absolute inset-0 bg-gradient-to-b from-sky-200/40 via-white/20 to-sky-100/50 pointer-events-none"></div>
+<div class="relative z-10 flex flex-col flex-1 pb-24">
+<!-- BEGIN: TopStatusBarAndHeader -->
+<header class="pt-3 px-5" data-purpose="app-header">
+<!-- شريط الحالة المصغر (بطارية، واي فاي، شبكة، وقت) بنمط شفاف -->
+<div class="flex items-center justify-between text-slate-800 text-xs font-semibold mb-3 px-1">
+<span class="text-sm font-bold tracking-tight">8:35</span>
+<div class="flex items-center space-x-1.5 space-x-reverse">
+<svg class="w-4 h-4 fill-current opacity-80" viewbox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.28 19.64 10.58 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"></path></svg>
+<svg class="w-4 h-4 fill-current opacity-80" viewbox="0 0 24 24"><path d="M2 17h20v2H2zm1.15-4.05L4 11.97c3.9-3.91 10.24-3.91 14.14 0l.85.98-1.42 1.42-.85-.98c-3.12-3.12-8.19-3.12-11.31 0l-.85.98-1.41-1.42zM7.5 9.07l.86-.98c2.34-2.34 6.14-2.34 8.49 0l.85.98-1.41 1.42-.85-.98a3.99 3.99 0 0 0-5.66 0l-.85.98L7.5 9.07z"></path></svg>
+<div class="w-5 h-2.5 border border-slate-700 rounded-sm p-0.5 flex items-center">
+<div class="h-full w-full bg-slate-800 rounded-2xs"></div>
+</div>
+</div>
+</div>
+<!-- أزرار وشعار الهيدر الزجاجي -->
+<div class="flex items-center justify-between mt-1">
+<!-- الجانب الأيمن: زر البروفايل ومفتاح النمط الليلي -->
+<div class="flex items-center space-x-2.5 space-x-reverse">
+<!-- زر الحساب الشخصي -->
+<button class="w-10 h-10 rounded-full glass-panel flex items-center justify-center text-cyan-600 shadow-md hover:scale-105 active:scale-95 transition-all border border-white/80" title="الحساب الشخصي">
+<i class="w-5 h-5" data-lucide="user"></i>
+</button>
+<!-- زر الوضع الليلي -->
+<button class="w-10 h-10 rounded-2xl glass-panel flex items-center justify-center text-cyan-600 shadow-md hover:scale-105 active:scale-95 transition-all border border-white/80" title="الوضع الليلي">
+<i class="w-5 h-5 fill-cyan-500 text-cyan-600" data-lucide="moon"></i>
+</button>
+</div>
+<!-- شعار Geomatics مع الأيقونة المضيئة الزجاجية -->
+<div class="flex items-center space-x-2 space-x-reverse glass-panel px-3.5 py-1.5 rounded-full border border-white/80 shadow-sm">
+<span class="font-extrabold text-lg text-slate-900 tracking-tight font-serif">Geomatics</span>
+<div class="w-7 h-7 rounded-xl bg-gradient-to-tr from-purple-600 to-indigo-500 flex items-center justify-center shadow-md text-white">
+<i class="w-4 h-4" data-lucide="sparkles"></i>
+</div>
+</div>
+</div>
+</header>
+<!-- END: TopStatusBarAndHeader -->
+<!-- BEGIN: SectionTitleAndQuiz -->
+<section class="mt-6 px-5" data-purpose="title-and-quiz-button">
+<div class="flex items-center justify-between">
+<!-- زر اختبر نفسك ذو النمط الزجاجي البنفسجي -->
+<button class="flex items-center space-x-2 space-x-reverse px-4 py-2.5 rounded-2xl bg-gradient-to-r from-purple-600/85 to-indigo-600/85 text-white font-bold text-xs backdrop-blur-md border border-purple-300/40 glow-btn hover:brightness-110 active:scale-95 transition-all">
+<i class="w-4 h-4" data-lucide="help-circle"></i>
+<span>اختبر نفسك</span>
+</button>
+<!-- العنوان الرئيسي وأيقونة الكتاب المتوهجة -->
+<div class="flex items-center space-x-3 space-x-reverse text-right">
+<div>
+<h1 class="text-2xl font-black text-slate-900 tracking-tight leading-snug">مكتبة الكتب</h1>
+<p class="text-xs font-semibold text-slate-600">اختر الفرقة الدراسية</p>
+</div>
+<!-- كبسولة أيقونة الكتاب الزجاجية الكبيرة -->
+<div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-cyan-500 to-teal-500 text-white flex items-center justify-center shadow-lg shadow-cyan-500/30 border border-white/70">
+<i class="w-6 h-6" data-lucide="book-open"></i>
+</div>
+</div>
+</div>
+</section>
+<!-- END: SectionTitleAndQuiz -->
+<!-- BEGIN: GradeCardsGrid -->
+<main class="mt-6 px-5 flex-1" data-purpose="grades-grid">
+<div class="grid grid-cols-2 gap-4">
+<!-- بطاقة الفرقة الأولى (العمود الأيمن / Top-Right RTL) -->
+<article class="glass-panel-elevated rounded-3xl p-4 flex flex-col items-center justify-between text-center min-h-[200px] hover:-translate-y-1 transition-transform duration-300 relative overflow-hidden group">
+<div class="w-full flex justify-center pt-1">
+<!-- أيقونة الترقيم الروماني I الزجاجية السماوية -->
+<div class="w-13 h-13 px-4 py-3 rounded-2xl bg-gradient-to-b from-sky-400 to-cyan-500 text-white font-black text-xl flex items-center justify-center glow-cyan border border-white/60">
+<span>I</span>
+</div>
+</div>
+<div class="my-2">
+<span class="text-[11px] font-bold text-slate-500 block mb-0.5">الفرقة</span>
+<h2 class="text-xl font-extrabold text-slate-800">الأولى</h2>
+</div>
+<!-- كبسولة عدد الكتب -->
+<div class="w-full">
+<div class="glass-badge bg-sky-100/70 text-cyan-800 rounded-2xl py-1 px-3 flex items-center justify-between text-xs font-bold border border-sky-200">
+<span class="text-[11px]">4 كتاب</span>
+<div class="flex items-center space-x-1 space-x-reverse text-cyan-600">
+<i class="w-3.5 h-3.5 fill-cyan-500/20" data-lucide="book"></i>
+<i class="w-3.5 h-3.5" data-lucide="chevron-left"></i>
+</div>
+</div>
+</div>
+</article>
+<!-- بطاقة الفرقة الثانية (العمود الأيسر / Top-Left RTL) -->
+<article class="glass-panel-elevated rounded-3xl p-4 flex flex-col items-center justify-between text-center min-h-[200px] hover:-translate-y-1 transition-transform duration-300 relative overflow-hidden group">
+<div class="w-full flex justify-center pt-1">
+<!-- أيقونة الترقيم الروماني II الزجاجية البنفسجية -->
+<div class="w-13 h-13 px-4 py-3 rounded-2xl bg-gradient-to-b from-purple-500 to-indigo-600 text-white font-black text-xl flex items-center justify-center glow-purple border border-white/60">
+<span>II</span>
+</div>
+</div>
+<div class="my-2">
+<span class="text-[11px] font-bold text-slate-500 block mb-0.5">الفرقة</span>
+<h2 class="text-xl font-extrabold text-slate-800">الثانية</h2>
+</div>
+<!-- كبسولة عدد الكتب -->
+<div class="w-full">
+<div class="glass-badge bg-purple-100/70 text-purple-900 rounded-2xl py-1 px-3 flex items-center justify-between text-xs font-bold border border-purple-200">
+<span class="text-[11px]">7 كتاب</span>
+<div class="flex items-center space-x-1 space-x-reverse text-purple-600">
+<i class="w-3.5 h-3.5 fill-purple-500/20" data-lucide="book"></i>
+<i class="w-3.5 h-3.5" data-lucide="chevron-left"></i>
+</div>
+</div>
+</div>
+</article>
+<!-- بطاقة الفرقة الثالثة (Bottom-Right RTL) -->
+<article class="glass-panel-elevated rounded-3xl p-4 flex flex-col items-center justify-between text-center min-h-[200px] hover:-translate-y-1 transition-transform duration-300 relative overflow-hidden group">
+<div class="w-full flex justify-center pt-1">
+<!-- أيقونة الترقيم الروماني III الزجاجية الخضراء -->
+<div class="w-13 h-13 px-4 py-3 rounded-2xl bg-gradient-to-b from-emerald-400 to-teal-600 text-white font-black text-xl flex items-center justify-center glow-emerald border border-white/60">
+<span>III</span>
+</div>
+</div>
+<div class="my-2">
+<span class="text-[11px] font-bold text-slate-500 block mb-0.5">الفرقة</span>
+<h2 class="text-xl font-extrabold text-slate-800">الثالثة</h2>
+</div>
+<!-- كبسولة الحالة (لا يوجد كتب بعد) -->
+<div class="w-full">
+<div class="glass-badge bg-emerald-100/70 text-emerald-900 rounded-2xl py-1 px-2.5 flex items-center justify-between text-[11px] font-bold border border-emerald-200">
+<span class="truncate">لا يوجد كتب بعد</span>
+<div class="flex items-center space-x-1 space-x-reverse text-emerald-600 shrink-0">
+<i class="w-3.5 h-3.5 fill-emerald-500/20" data-lucide="book"></i>
+<i class="w-3.5 h-3.5" data-lucide="chevron-left"></i>
+</div>
+</div>
+</div>
+</article>
+<!-- بطاقة الفرقة الرابعة (Bottom-Left RTL) -->
+<article class="glass-panel-elevated rounded-3xl p-4 flex flex-col items-center justify-between text-center min-h-[200px] hover:-translate-y-1 transition-transform duration-300 relative overflow-hidden group">
+<div class="w-full flex justify-center pt-1">
+<!-- أيقونة الترقيم الروماني IV الزجاجية البرتقالية الذهبية -->
+<div class="w-13 h-13 px-4 py-3 rounded-2xl bg-gradient-to-b from-amber-400 to-orange-500 text-white font-black text-xl flex items-center justify-center glow-amber border border-white/60">
+<span>IV</span>
+</div>
+</div>
+<div class="my-2">
+<span class="text-[11px] font-bold text-slate-500 block mb-0.5">الفرقة</span>
+<h2 class="text-xl font-extrabold text-slate-800">الرابعة</h2>
+</div>
+<!-- كبسولة الحالة (لا يوجد كتب بعد) -->
+<div class="w-full">
+<div class="glass-badge bg-amber-100/70 text-amber-900 rounded-2xl py-1 px-2.5 flex items-center justify-between text-[11px] font-bold border border-amber-200">
+<span class="truncate">لا يوجد كتب بعد</span>
+<div class="flex items-center space-x-1 space-x-reverse text-amber-600 shrink-0">
+<i class="w-3.5 h-3.5 fill-amber-500/20" data-lucide="book"></i>
+<i class="w-3.5 h-3.5" data-lucide="chevron-left"></i>
+</div>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- END: GradeCardsGrid -->
+</div>
+<!-- BEGIN: BottomNavigationBar -->
+<nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto z-30 px-3 pb-3 pointer-events-auto" data-purpose="bottom-navigation">
+<!-- شريط سفلي زجاجي شفاف فاخر مستدير الأطراف بالكامل -->
+<div class="glass-panel-elevated rounded-3xl px-3 py-2 flex items-center justify-around shadow-2xl border border-white/80">
+<!-- التبويب: كتب (الحالة النشطة Active) -->
+<a class="flex flex-col items-center group relative -top-3" href="#books">
+<!-- كبسولة دائرية بارزة ومضيئة للتبويب النشط -->
+<div class="w-12 h-12 rounded-full bg-gradient-to-tr from-cyan-500 to-teal-400 text-white flex items-center justify-center shadow-lg shadow-cyan-500/40 border-2 border-white transform transition-transform group-hover:scale-105">
+<i class="w-5 h-5" data-lucide="book-open"></i>
+</div>
+<span class="text-[11px] font-extrabold text-cyan-700 mt-1">كتب</span>
+</a>
+<!-- التبويب: دكاترة -->
+<a class="flex flex-col items-center text-slate-500 hover:text-cyan-600 transition-colors py-1" href="#doctors">
+<i class="w-5 h-5 mb-0.5 stroke-[1.8]" data-lucide="graduation-cap"></i>
+<span class="text-[11px] font-semibold">دكاترة</span>
+</a>
+<!-- التبويب: ملخصات -->
+<a class="flex flex-col items-center text-slate-500 hover:text-cyan-600 transition-colors py-1" href="#summaries">
+<i class="w-5 h-5 mb-0.5 stroke-[1.8]" data-lucide="file-text"></i>
+<span class="text-[11px] font-semibold">ملخصات</span>
+</a>
+<!-- التبويب: أخبار -->
+<a class="flex flex-col items-center text-slate-500 hover:text-cyan-600 transition-colors py-1" href="#news">
+<i class="w-5 h-5 mb-0.5 stroke-[1.8]" data-lucide="newspaper"></i>
+<span class="text-[11px] font-semibold">أخبار</span>
+</a>
+<!-- التبويب: مواعيد -->
+<a class="flex flex-col items-center text-slate-500 hover:text-cyan-600 transition-colors py-1" href="#schedules">
+<i class="w-5 h-5 mb-0.5 stroke-[1.8]" data-lucide="calendar"></i>
+<span class="text-[11px] font-semibold">مواعيد</span>
+</a>
+<!-- التبويب: الرئيسية -->
+<a class="flex flex-col items-center text-slate-500 hover:text-cyan-600 transition-colors py-1" href="#home">
+<i class="w-5 h-5 mb-0.5 stroke-[1.8]" data-lucide="compass"></i>
+<span class="text-[11px] font-semibold">الرئيسية</span>
+</a>
+</div>
+</nav>
+<!-- END: BottomNavigationBar -->
+</div>
+<!-- END: MobileDeviceContainer -->
+<!-- تهيئة مكتبة الأيقونات -->
+<script data-purpose="icons-init">
+    lucide.createIcons();
+  </script>
+</body></html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Geomatics - الملخصات والمراجع</title>
+<!-- Tailwind CSS CDN with forms and container queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Cairo and Amiri for typography matching the screenshot -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,700;1,700&amp;family=Cairo:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            cairo: ['Cairo', 'sans-serif'],
+            amiri: ['Amiri', 'serif'],
+          },
+          colors: {
+            pinkAccent: '#E83E8C',
+            pinkGlow: '#FF3385',
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Glassmorphism Custom Styles -->
+<style data-purpose="glass-styling">
+    body {
+      font-family: 'Cairo', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+
+    /* Ultra-refined Glassmorphism Cards */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.06), 0 0 20px 0 rgba(255, 255, 255, 0.4) inset;
+    }
+
+    .glass-bar {
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.75);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.08);
+    }
+
+    .glass-btn-active {
+      background: linear-gradient(135deg, #EC3786 0%, #D81B60 100%);
+      box-shadow: 0 4px 15px rgba(216, 27, 96, 0.35);
+    }
+
+    /* Roman Badge Glows */
+    .badge-blue {
+      background: linear-gradient(135deg, #00B4DB 0%, #0083B0 100%);
+      box-shadow: 0 6px 16px rgba(0, 180, 219, 0.4);
+    }
+
+    .badge-purple {
+      background: linear-gradient(135deg, #8E2DE2 0%, #4A00E0 100%);
+      box-shadow: 0 6px 16px rgba(110, 32, 230, 0.4);
+    }
+
+    .badge-teal {
+      background: linear-gradient(135deg, #00B09B 0%, #16817A 100%);
+      box-shadow: 0 6px 16px rgba(0, 176, 155, 0.4);
+    }
+
+    .badge-amber {
+      background: linear-gradient(135deg, #F7971E 0%, #FF8008 100%);
+      box-shadow: 0 6px 16px rgba(255, 128, 8, 0.4);
+    }
+
+    /* iOS smooth scroll and hidden scrollbar */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<!-- END: Glassmorphism Custom Styles -->
+</head>
+<body class="min-h-screen bg-slate-100 flex items-center justify-center p-0 sm:p-4 text-slate-800 antialiased overflow-x-hidden">
+<!-- Mobile iOS Frame Container -->
+<main class="w-full max-w-[420px] h-[890px] relative rounded-[40px] shadow-2xl overflow-hidden flex flex-col justify-between border-[6px] border-white/60" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAdaSZXfVwqPIphGPA5yNuc49pe7v6TxLbgiu5SNBjBURgFRiHzjnh7s8FTVLUnOw-2YnjHucFx9Svjl52RerS6DxHv9pPpZdgn6fvFQ8OkIaPzNVOKe07F52P4xs3H6YClVgrSy6N9EEEw0KHULhCGrJDv5x5guP_dnba3IDrib7x1CjKlClslR7ZBDtBHv_yc0oTPacQEse3LY26i4ZIfMCJm_JRlYjAJRmDkrmm5t3dtLkmFpG15IXlwyG6BxH-SHWw'); background-size: cover; background-position: center;">
+<!-- Ambient Overlay for Enhanced Readability and Light Diffusion -->
+<div class="absolute inset-0 bg-gradient-to-b from-white/75 via-white/50 to-white/80 pointer-events-none backdrop-blur-[2px]"></div>
+<!-- Scrollable Body Content -->
+<div class="relative z-10 w-full h-full flex flex-col overflow-y-auto no-scrollbar pb-24 px-5 pt-3">
+<!-- BEGIN: iOS Status Bar Space -->
+<div class="w-full h-6 flex justify-between items-center px-4 text-xs font-semibold text-slate-800 opacity-80 select-none mb-1">
+<span>9:41</span>
+<div class="flex items-center space-x-1 space-x-reverse text-[10px]">
+<svg class="w-3.5 h-3.5 inline" fill="currentColor" viewbox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L12 22l7.03-4.39C20.26 16.07 21 14.12 21 12c0-4.97-4.03-9-9-9z"></path></svg>
+<svg class="w-3.5 h-3.5 inline" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path></svg>
+<span class="text-[11px] font-bold">5G</span>
+</div>
+</div>
+<!-- END: iOS Status Bar Space -->
+<!-- BEGIN: MainHeader -->
+<header class="flex items-center justify-between mt-1 mb-5" data-purpose="top-header">
+<!-- Profile and Theme Controls (Left in screenshot) -->
+<div class="flex items-center space-x-2.5 space-x-reverse">
+<!-- Profile Button -->
+<button aria-label="الملف الشخصي" class="w-11 h-11 rounded-full glass-bar flex items-center justify-center border-2 border-pink-400/80 shadow-md shadow-pink-500/20 active:scale-95 transition-transform" type="button">
+<svg class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Night Mode Button -->
+<button aria-label="الوضع الليلي" class="w-11 h-11 rounded-2xl glass-bar flex items-center justify-center shadow-sm active:scale-95 transition-transform" type="button">
+<svg class="w-5 h-5 text-pink-500 fill-current rotate-[-20deg]" viewbox="0 0 20 20">
+<path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+</svg>
+</button>
+</div>
+<!-- Logo & App Title -->
+<div class="flex items-center space-x-2.5 space-x-reverse" data-purpose="app-branding">
+<h1 class="text-2xl font-black tracking-tight text-slate-900 font-serif" style="font-family: 'Amiri', serif;">Geomatics</h1>
+<div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 flex items-center justify-center shadow-lg shadow-purple-500/30">
+<!-- Sparkles / Star Icon -->
+<svg class="w-5 h-5 text-white" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 2l2.4 5.8 6.1.6-4.6 4.1 1.4 6-5.3-3.1-5.3 3.1 1.4-6-4.6-4.1 6.1-.6L12 2z"></path>
+</svg>
+</div>
+</div>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: PageTitle -->
+<div class="text-center mb-5" data-purpose="page-title">
+<h2 class="text-3xl font-extrabold text-slate-900 tracking-tight" style="font-family: 'Amiri', serif;">الملخصات والمراجع</h2>
+</div>
+<!-- END: PageTitle -->
+<!-- BEGIN: TabsSegment -->
+<section aria-label="تبويبات الملخصات" class="mb-6">
+<div class="glass-bar p-1.5 rounded-full flex items-center shadow-inner justify-between gap-1">
+<!-- ملخصات الفرق (Active) -->
+<button class="flex-1 glass-btn-active text-white font-bold py-2.5 px-3 rounded-full flex items-center justify-center gap-2 text-sm shadow-md transition-all">
+<span>ملخصات الفرق</span>
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24">
+<path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"></path>
+</svg>
+</button>
+<!-- الملخصات العامة (Inactive) -->
+<button class="flex-1 text-slate-700 hover:text-slate-900 font-bold py-2.5 px-3 rounded-full flex items-center justify-center gap-2 text-sm transition-all">
+<span>الملخصات العامة</span>
+<svg class="w-4 h-4 text-slate-500" fill="currentColor" viewbox="0 0 24 24">
+<path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"></path>
+</svg>
+</button>
+</div>
+</section>
+<!-- END: TabsSegment -->
+<!-- BEGIN: SectionHeader -->
+<section class="flex items-center justify-between mb-5 px-1" data-purpose="section-header">
+<div class="text-right">
+<h3 class="text-xl font-bold text-slate-900" style="font-family: 'Amiri', serif;">ملخصات الفرق الدراسية</h3>
+<p class="text-xs text-slate-600 font-semibold mt-0.5">مذكرات ومقررات دراسية مبوبة حسب كل فرقة</p>
+</div>
+<!-- Large Document Icon with Gradient Glow -->
+<div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center text-white shadow-lg shadow-pink-500/30 flex-shrink-0">
+<svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24">
+<path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"></path>
+</svg>
+</div>
+</section>
+<!-- END: SectionHeader -->
+<!-- BEGIN: AcademicGradesGrid -->
+<!-- Matches 2x2 grid layout exactly from the user's reference image -->
+<section class="grid grid-cols-2 gap-3.5 mb-6" data-purpose="grades-grid">
+<!-- Card: الفرقة الأولى (Row 1, Right Column in RTL) -->
+<article class="glass-card rounded-3xl p-4 flex flex-col items-center justify-between text-center relative overflow-hidden h-[188px] transition-transform active:scale-[0.98]">
+<!-- Top Roman Badge -->
+<div class="badge-blue w-14 h-14 rounded-2xl flex items-center justify-center text-white font-extrabold text-xl shadow-md mt-1">
+            I
+          </div>
+<!-- Label & Title -->
+<div class="my-auto">
+<span class="text-xs font-semibold text-sky-600 block mb-0.5">الفرقة</span>
+<h4 class="text-2xl font-bold text-slate-900 font-serif" style="font-family: 'Amiri', serif;">الأولى</h4>
+</div>
+<!-- Bottom Pill Badge -->
+<div class="w-full py-1.5 px-2 bg-sky-100/70 border border-sky-200/80 rounded-xl flex items-center justify-center gap-1.5 text-[11px] font-bold text-sky-700">
+<span>لا توجد ملخصات بعد</span>
+<svg class="w-3.5 h-3.5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"></path>
+</svg>
+</div>
+</article>
+<!-- Card: الفرقة الثانية (Row 1, Left Column in RTL) -->
+<article class="glass-card rounded-3xl p-4 flex flex-col items-center justify-between text-center relative overflow-hidden h-[188px] transition-transform active:scale-[0.98]">
+<!-- Top Roman Badge -->
+<div class="badge-purple w-14 h-14 rounded-2xl flex items-center justify-center text-white font-extrabold text-xl shadow-md mt-1">
+            II
+          </div>
+<!-- Label & Title -->
+<div class="my-auto">
+<span class="text-xs font-semibold text-purple-600 block mb-0.5">الفرقة</span>
+<h4 class="text-2xl font-bold text-slate-900 font-serif" style="font-family: 'Amiri', serif;">الثانية</h4>
+</div>
+<!-- Bottom Pill Badge (With active counts) -->
+<div class="w-full py-1.5 px-2 bg-purple-100/70 border border-purple-200/80 rounded-xl flex items-center justify-center gap-1.5 text-[11px] font-bold text-purple-700">
+<span>2 ملخص</span>
+<svg class="w-3.5 h-3.5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"></path>
+</svg>
+</div>
+</article>
+<!-- Card: الفرقة الثالثة (Row 2, Right Column in RTL) -->
+<article class="glass-card rounded-3xl p-4 flex flex-col items-center justify-between text-center relative overflow-hidden h-[188px] transition-transform active:scale-[0.98]">
+<!-- Top Roman Badge -->
+<div class="badge-teal w-14 h-14 rounded-2xl flex items-center justify-center text-white font-extrabold text-xl shadow-md mt-1">
+            III
+          </div>
+<!-- Label & Title -->
+<div class="my-auto">
+<span class="text-xs font-semibold text-emerald-600 block mb-0.5">الفرقة</span>
+<h4 class="text-2xl font-bold text-slate-900 font-serif" style="font-family: 'Amiri', serif;">الثالثة</h4>
+</div>
+<!-- Bottom Pill Badge -->
+<div class="w-full py-1.5 px-2 bg-emerald-100/70 border border-emerald-200/80 rounded-xl flex items-center justify-center gap-1.5 text-[11px] font-bold text-emerald-700">
+<span>لا توجد ملخصات بعد</span>
+<svg class="w-3.5 h-3.5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"></path>
+</svg>
+</div>
+</article>
+<!-- Card: الفرقة الرابعة (Row 2, Left Column in RTL) -->
+<article class="glass-card rounded-3xl p-4 flex flex-col items-center justify-between text-center relative overflow-hidden h-[188px] transition-transform active:scale-[0.98]">
+<!-- Top Roman Badge -->
+<div class="badge-amber w-14 h-14 rounded-2xl flex items-center justify-center text-white font-extrabold text-xl shadow-md mt-1">
+            IV
+          </div>
+<!-- Label & Title -->
+<div class="my-auto">
+<span class="text-xs font-semibold text-amber-600 block mb-0.5">الفرقة</span>
+<h4 class="text-2xl font-bold text-slate-900 font-serif" style="font-family: 'Amiri', serif;">الرابعة</h4>
+</div>
+<!-- Bottom Pill Badge -->
+<div class="w-full py-1.5 px-2 bg-amber-100/70 border border-amber-200/80 rounded-xl flex items-center justify-center gap-1.5 text-[11px] font-bold text-amber-700">
+<span>لا توجد ملخصات بعد</span>
+<svg class="w-3.5 h-3.5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"></path>
+</svg>
+</div>
+</article>
+</section>
+<!-- END: AcademicGradesGrid -->
+</div>
+<!-- BEGIN: BottomNavigationBar -->
+<nav aria-label="الشريط السفلي" class="absolute bottom-4 inset-x-4 z-30" data-purpose="bottom-navigation">
+<div class="glass-bar rounded-[30px] px-3 py-2 flex items-center justify-between shadow-2xl border border-white/90">
+<!-- 1. الرئيسية -->
+<button class="flex flex-col items-center justify-center text-slate-500 hover:text-slate-800 transition-colors w-12 py-1" type="button">
+<svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-[10px] font-bold">الرئيسية</span>
+</button>
+<!-- 2. مواعيد -->
+<button class="flex flex-col items-center justify-center text-slate-500 hover:text-slate-800 transition-colors w-12 py-1" type="button">
+<svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-[10px] font-bold">مواعيد</span>
+</button>
+<!-- 3. أخبار -->
+<button class="flex flex-col items-center justify-center text-slate-500 hover:text-slate-800 transition-colors w-12 py-1" type="button">
+<svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-[10px] font-bold">أخبار</span>
+</button>
+<!-- 4. ملخصات (Active Center Item with Pink Ambient Glow) -->
+<button aria-current="page" class="flex flex-col items-center justify-center text-pink-600 relative -top-3 w-14" type="button">
+<div class="w-13 h-13 p-3 rounded-full bg-gradient-to-tr from-pink-600 to-rose-400 text-white shadow-lg shadow-pink-500/40 ring-4 ring-white flex items-center justify-center mb-1 scale-105 active:scale-95 transition-transform">
+<!-- Open Book with Star Icon -->
+<svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24">
+<path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4zm12 16H6v-2h12v2zm0-4H6v-2h12v2zm0-4h-5V4h5v8z"></path>
+</svg>
+</div>
+<span class="text-[11px] font-extrabold text-pink-600">ملخصات</span>
+</button>
+<!-- 5. دكاترة -->
+<button class="flex flex-col items-center justify-center text-slate-500 hover:text-slate-800 transition-colors w-12 py-1" type="button">
+<svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M12 14l9-5-9-5-9 5 9 5z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-[10px] font-bold">دكاترة</span>
+</button>
+<!-- 6. كتب -->
+<button class="flex flex-col items-center justify-center text-slate-500 hover:text-slate-800 transition-colors w-12 py-1" type="button">
+<svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-[10px] font-bold">كتب</span>
+</button>
+</div>
+</nav>
+<!-- END: BottomNavigationBar -->
+<!-- iPhone Home Indicator -->
+<div class="absolute bottom-1.5 inset-x-0 flex justify-center pointer-events-none z-40">
+<div class="w-32 h-1 bg-slate-900/40 rounded-full"></div>
+</div>
+</main>
+<!-- Interactive feedback script -->
+<script data-purpose="interaction-feedback">
+    document.addEventListener('DOMContentLoaded', () => {
+      const interactiveBtns = document.querySelectorAll('button, article');
+      interactiveBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          if (window.navigator && window.navigator.vibrate) {
+            window.navigator.vibrate(10);
+          }
+        });
+      });
+    });
+  </script>
+</body></html>
